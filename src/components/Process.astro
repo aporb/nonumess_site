@@ -1,0 +1,107 @@
+---
+const steps = [
+  {
+    number: "1️⃣",
+    title: "Schedule a Free Consultation",
+    description: "Discuss goals & challenges."
+  },
+  {
+    number: "2️⃣",
+    title: "Declutter & Organize",
+    description: "Hands-on transformation with expert guidance."
+  },
+  {
+    number: "3️⃣",
+    title: "Maintain the Order",
+    description: "Simple upkeep strategies for long-term success."
+  }
+];
+---
+
+<section class="section process" id="process">
+  <div class="container">
+    <h2 class="section-title">How NoNuMess Works – Simple, Stress-Free, Seamless.</h2>
+    
+    <div class="process-steps">
+      {steps.map((step, index) => (
+        <div class="process-step">
+          <div class="step-number">{step.number}</div>
+          <h3 class="step-title">{step.title}</h3>
+          <p class="step-description">{step.description}</p>
+          {index < steps.length - 1 && <div class="step-connector"></div>}
+        </div>
+      ))}
+    </div>
+    
+    <div class="process-cta">
+      <a href="#booking" class="btn btn-primary">Start Your Transformation – Book Now</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .process {
+    background-color: var(--color-light-gray);
+  }
+  
+  .process-steps {
+    display: flex;
+    justify-content: space-between;
+    margin: var(--spacing-lg) 0;
+    position: relative;
+  }
+  
+  .process-step {
+    flex: 1;
+    text-align: center;
+    padding: 0 var(--spacing-sm);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .step-number {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .step-title {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-accent);
+  }
+  
+  .step-description {
+    color: var(--color-text-light);
+  }
+  
+  .step-connector {
+    position: absolute;
+    top: 40px;
+    right: -50%;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+    z-index: 1;
+  }
+  
+  .process-cta {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+  }
+  
+  @media (max-width: 768px) {
+    .process-steps {
+      flex-direction: column;
+      gap: var(--spacing-lg);
+    }
+    
+    .step-connector {
+      top: auto;
+      right: auto;
+      bottom: -30px;
+      left: 50%;
+      width: 2px;
+      height: 30px;
+      transform: translateX(-50%);
+    }
+  }
+</style>

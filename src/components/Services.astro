@@ -1,0 +1,164 @@
+---
+const services = [
+  {
+    id: "home",
+    icon: "🏡",
+    name: "Home Organization",
+    description: "Transform cluttered spaces into functional, beautiful areas that bring peace to your daily life.",
+    price: "$250+",
+    details: "3-hour session"
+  },
+  {
+    id: "moving",
+    icon: "📦",
+    name: "Moving & Unpacking Assistance",
+    description: "Streamline your move with expert packing, unpacking, and setup services for a stress-free transition.",
+    price: "$500+",
+    details: "Full moving setup"
+  },
+  {
+    id: "office",
+    icon: "🏢",
+    name: "Office & Workspace Optimization",
+    description: "Boost productivity with an organized, efficient workspace tailored to your workflow.",
+    price: "$350+",
+    details: "Professional workspace setup"
+  },
+  {
+    id: "estate",
+    icon: "🏠",
+    name: "Estate & Downsizing Organization",
+    description: "Compassionate assistance with sorting, organizing, and transitioning belongings during life changes.",
+    price: "$750+",
+    details: "Comprehensive estate organization"
+  },
+  {
+    id: "virtual",
+    icon: "💻",
+    name: "Virtual Consultation",
+    description: "Expert guidance and personalized organization plans from the comfort of your home.",
+    price: "$99",
+    details: "One-hour session"
+  }
+];
+---
+
+<section class="section services" id="services">
+  <div class="container">
+    <h2 class="section-title">Designed to Fit Your Needs: Our Signature Services</h2>
+    
+    <div class="services-container">
+      {services.map(service => (
+        <div class="service-card" id={service.id}>
+          <div class="service-icon">{service.icon}</div>
+          <div class="service-content">
+            <h3 class="service-name">{service.name}</h3>
+            <p class="service-description">{service.description}</p>
+            <div class="service-details">
+              <div class="service-price">{service.price}</div>
+              <div class="service-time">{service.details}</div>
+            </div>
+            <a href="#booking" class="btn btn-primary service-cta" data-service={service.id}>Book Now</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Service selection for booking form
+  const serviceButtons = document.querySelectorAll('.service-cta');
+  
+  serviceButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const serviceId = button.getAttribute('data-service');
+      const serviceSelect = document.getElementById('service-interest');
+      
+      if (serviceSelect) {
+        // Set the select value based on which service was clicked
+        serviceSelect.value = serviceId;
+      }
+    });
+  });
+</script>
+
+<style>
+  .services {
+    background-color: var(--color-white);
+  }
+  
+  .services-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+  }
+  
+  .service-card {
+    display: flex;
+    background-color: var(--color-light-gray);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: var(--transition-normal);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    font-size: 2.5rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  
+  .service-content {
+    padding: var(--spacing-md);
+    flex-grow: 1;
+  }
+  
+  .service-name {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-accent);
+  }
+  
+  .service-description {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-light);
+  }
+  
+  .service-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+  }
+  
+  .service-price {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+  }
+  
+  .service-time {
+    color: var(--color-text-light);
+    font-style: italic;
+  }
+  
+  @media (max-width: 768px) {
+    .service-card {
+      flex-direction: column;
+    }
+    
+    .service-icon {
+      min-width: 100%;
+      padding: var(--spacing-sm) 0;
+    }
+  }
+</style>

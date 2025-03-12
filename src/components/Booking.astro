@@ -1,0 +1,221 @@
+---
+---
+
+<section class="section booking" id="booking">
+  <div class="container">
+    <h2 class="section-title">Ready for a Stress-Free, Organized Home? Let's Get Started!</h2>
+    
+    <div class="booking-container">
+      <form class="booking-form" id="booking-form">
+        <div class="form-group">
+          <label for="name" class="form-label">Name *</label>
+          <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email" class="form-label">Email *</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="form-control">
+        </div>
+        
+        <div class="form-group">
+          <label for="service-interest" class="form-label">Service Interest *</label>
+          <select id="service-interest" name="service" class="form-control" required>
+            <option value="" disabled selected>Select a service</option>
+            <option value="home">Home Organization</option>
+            <option value="moving">Moving & Unpacking Assistance</option>
+            <option value="office">Office & Workspace Optimization</option>
+            <option value="estate">Estate & Downsizing Organization</option>
+            <option value="virtual">Virtual Consultation</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="preferred-date" class="form-label">Preferred Date</label>
+          <input type="date" id="preferred-date" name="date" class="form-control">
+        </div>
+        
+        <div class="form-group">
+          <label for="message" class="form-label">Additional Information</label>
+          <textarea id="message" name="message" class="form-control" rows="4"></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-large" id="submit-button">
+          <span class="button-text">Book My Free Consultation</span>
+          <span class="button-loader" style="display: none;">
+            <span class="loader-dot"></span>
+            <span class="loader-dot"></span>
+            <span class="loader-dot"></span>
+          </span>
+        </button>
+      </form>
+      
+      <div class="booking-success" style="display: none;">
+        <h3>Thank you for booking a consultation!</h3>
+        <p>We've received your request and will contact you within 24 hours to confirm your appointment.</p>
+      </div>
+      
+      <div class="booking-error" style="display: none;">
+        <h3>Oops! Something went wrong.</h3>
+        <p>We couldn't process your request. Please try again or contact us directly.</p>
+        <button class="btn btn-secondary try-again-btn">Try Again</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Form submission handling
+  const bookingForm = document.getElementById('booking-form');
+  const successMessage = document.querySelector('.booking-success');
+  const errorMessage = document.querySelector('.booking-error');
+  const submitButton = document.getElementById('submit-button');
+  const buttonText = submitButton.querySelector('.button-text');
+  const buttonLoader = submitButton.querySelector('.button-loader');
+  const tryAgainBtn = document.querySelector('.try-again-btn');
+  
+  // Google Apps Script URL - REPLACE THIS WITH YOUR ACTUAL DEPLOYED SCRIPT URL
+  const SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec';
+  
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      // Show loading state
+      buttonText.style.display = 'none';
+      buttonLoader.style.display = 'inline-block';
+      submitButton.disabled = true;
+      
+      try {
+        // Get form data
+        const formData = new FormData(bookingForm);
+        const formValues = Object.fromEntries(formData.entries());
+        
+        // Add timestamp
+        formValues.timestamp = new Date().toISOString();
+        
+        // Send data to Google Sheets
+        const response = await fetch(SCRIPT_URL, {
+          method: 'POST',
+          body: JSON.stringify(formValues),
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          mode: 'no-cors' // Required for Google Apps Script
+        });
+        
+        // Show success message
+        bookingForm.style.display = 'none';
+        successMessage.style.display = 'block';
+        
+        // Reset form
+        bookingForm.reset();
+        
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        
+        // Show error message
+        bookingForm.style.display = 'none';
+        errorMessage.style.display = 'block';
+      } finally {
+        // Reset button state
+        buttonText.style.display = 'inline';
+        buttonLoader.style.display = 'none';
+        submitButton.disabled = false;
+      }
+    });
+  }
+  
+  // Try again button
+  if (tryAgainBtn) {
+    tryAgainBtn.addEventListener('click', () => {
+      errorMessage.style.display = 'none';
+      bookingForm.style.display = 'block';
+    });
+  }
+</script>
+
+<style>
+  .booking {
+    background-color: var(--color-light-gray);
+  }
+  
+  .booking-container {
+    max-width: 600px;
+    margin: var(--spacing-lg) auto;
+  }
+  
+  .booking-form {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .booking-success,
+  .booking-error {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  
+  .booking-success h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .booking-error h3 {
+    color: #e74c3c;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .try-again-btn {
+    margin-top: var(--spacing-md);
+  }
+  
+  /* Loading animation */
+  .button-loader {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .loader-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin: 0 2px;
+    background-color: white;
+    border-radius: 50%;
+    animation: dot-pulse 1.4s infinite ease-in-out;
+  }
+  
+  .loader-dot:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .loader-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .loader-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes dot-pulse {
+    0%, 80%, 100% { 
+      transform: scale(0);
+      opacity: 0.5;
+    }
+    40% { 
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>

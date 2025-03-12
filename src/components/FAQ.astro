@@ -1,0 +1,149 @@
+---
+const faqs = [
+  {
+    question: "How long does a typical session take?",
+    answer: "Most sessions last 3-5 hours per space. The exact time depends on the size of the area and the amount of items to organize. For larger projects, we may recommend multiple sessions."
+  },
+  {
+    question: "Do you provide storage products?",
+    answer: "I recommend & source products, but I don't sell them. After assessing your space, I'll provide a customized shopping list of recommended items that will work best for your specific needs."
+  },
+  {
+    question: "Can I book multiple sessions?",
+    answer: "Yes! Multi-session packages are available and recommended for larger homes or more complex organizing projects. We offer discounted rates for package bookings."
+  },
+  {
+    question: "What areas do you serve?",
+    answer: "We primarily serve the greater Houston area. For locations outside this area, travel fees may apply. Virtual consultations are available nationwide."
+  },
+  {
+    question: "How should I prepare for my organizing session?",
+    answer: "No preparation is needed! We'll work together from the start. It's actually better if you don't pre-sort items so we can develop a system that matches your natural tendencies."
+  }
+];
+---
+
+<section class="section faq" id="faq">
+  <div class="container">
+    <h2 class="section-title">Your Questions, Answered.</h2>
+    
+    <div class="faq-container">
+      {faqs.map((faq, index) => (
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls={`faq-answer-${index}`}>
+            ❓ {faq.question}
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id={`faq-answer-${index}`}>
+            <p>{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="faq-cta">
+      <a href="#booking" class="btn btn-primary">Still Have Questions? Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // FAQ accordion functionality
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const isExpanded = question.getAttribute('aria-expanded') === 'true';
+      
+      // Close all other FAQs
+      faqQuestions.forEach(q => {
+        if (q !== question) {
+          q.setAttribute('aria-expanded', 'false');
+          q.querySelector('.faq-icon').textContent = '+';
+          const answerId = q.getAttribute('aria-controls');
+          const answer = document.getElementById(answerId);
+          if (answer) {
+            answer.style.maxHeight = '0';
+          }
+        }
+      });
+      
+      // Toggle current FAQ
+      question.setAttribute('aria-expanded', !isExpanded);
+      question.querySelector('.faq-icon').textContent = isExpanded ? '+' : '-';
+      
+      const answerId = question.getAttribute('aria-controls');
+      const answer = document.getElementById(answerId);
+      
+      if (answer) {
+        if (isExpanded) {
+          answer.style.maxHeight = '0';
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  .faq {
+    background-color: var(--color-white);
+  }
+  
+  .faq-container {
+    max-width: 800px;
+    margin: var(--spacing-lg) auto;
+  }
+  
+  .faq-item {
+    margin-bottom: var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+  
+  .faq-question {
+    width: 100%;
+    text-align: left;
+    padding: var(--spacing-sm);
+    background-color: var(--color-light-gray);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--color-accent);
+    transition: var(--transition-fast);
+  }
+  
+  .faq-question:hover {
+    background-color: rgba(74, 144, 226, 0.1);
+  }
+  
+  .faq-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: var(--transition-fast);
+  }
+  
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: var(--color-white);
+  }
+  
+  .faq-answer p {
+    padding: var(--spacing-sm);
+    color: var(--color-text-light);
+  }
+  
+  .faq-cta {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+  }
+</style>

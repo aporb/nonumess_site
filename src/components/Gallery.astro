@@ -1,0 +1,144 @@
+---
+---
+
+<section id="gallery" class="section gallery-section">
+  <div class="container">
+    <h2 class="section-title">See the Magic of NoNuMess</h2>
+    <p class="section-subtitle">Browse through our transformations and imagine what we can do for your space.</p>
+    
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <div class="gallery-card">
+          <h3>Kitchen Transformation</h3>
+          <div class="before-after-container">
+            <div class="image-container">
+              <img src="/images/before-after-1.jpg" alt="Kitchen organization before and after" class="gallery-img">
+              <div class="image-label before">Before</div>
+              <div class="image-label after">After</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-card">
+          <h3>Closet Organization</h3>
+          <div class="before-after-container">
+            <div class="image-container">
+              <img src="/images/before-after-2.jpg" alt="Closet organization before and after" class="gallery-img">
+              <div class="image-label before">Before</div>
+              <div class="image-label after">After</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-item">
+        <div class="gallery-card">
+          <h3>Home Office Setup</h3>
+          <div class="before-after-container">
+            <div class="image-container">
+              <img src="/images/before-after-3.jpg" alt="Home office organization before and after" class="gallery-img">
+              <div class="image-label before">Before</div>
+              <div class="image-label after">After</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="text-center mt-4">
+      <a href="#booking" class="btn btn-primary">Transform Your Space Today</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .gallery-section {
+    background-color: var(--color-secondary);
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .gallery-item {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: var(--color-white);
+    transition: var(--transition-normal);
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  .gallery-card {
+    padding: 1.5rem;
+  }
+  
+  .gallery-card h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--color-accent);
+    font-size: 1.5rem;
+  }
+  
+  .before-after-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+  
+  .image-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .gallery-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius);
+  }
+  
+  .image-label {
+    position: absolute;
+    bottom: 10px;
+    padding: 5px 12px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  
+  .image-label.before {
+    left: 10px;
+  }
+  
+  .image-label.after {
+    right: 10px;
+  }
+  
+  @media (max-width: 992px) {
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>

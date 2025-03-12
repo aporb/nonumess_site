@@ -1,0 +1,94 @@
+---
+import '@fontsource/poppins';
+import '@fontsource/montserrat';
+import '@fontsource/open-sans';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { 
+  title, 
+  description = "Professional home organization services for a stress-free, functional, and beautiful home in Houston, TX."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="home organization, professional organizer, Houston, decluttering, home office organization, moving assistance" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nonumess.com" />
+    <meta property="og:image" content="/images/hero-bg.jpg" />
+    <!-- Facebook Pixel (placeholder) -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '123456789012345');
+      fbq('track', 'PageView');
+    </script>
+    <!-- Google Analytics (placeholder) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <div id="sticky-cta" class="sticky-cta">
+      <a href="#booking" class="btn btn-primary">📅 Book a Free Consultation</a>
+    </div>
+  </body>
+</html>
+
+<script>
+  // Sticky CTA visibility control
+  const stickyCta = document.getElementById('sticky-cta');
+  const heroSection = document.querySelector('.hero');
+  const bookingSection = document.getElementById('booking');
+  
+  if (stickyCta && heroSection && bookingSection) {
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+      const bookingTop = bookingSection.offsetTop;
+      
+      // Show sticky CTA when scrolled past hero but not yet at booking section
+      if (scrollPosition > heroBottom && scrollPosition < bookingTop - 200) {
+        stickyCta.classList.add('visible');
+      } else {
+        stickyCta.classList.remove('visible');
+      }
+    });
+  }
+</script>
+
+<style is:global>
+  /* Global styles moved to global.css */
+</style>

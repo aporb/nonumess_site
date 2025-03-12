@@ -1,0 +1,130 @@
+---
+const testimonials = [
+  {
+    id: 1,
+    name: "Sarah M.",
+    rating: 5,
+    text: "I never knew how much clutter affected my mood until NoNuMess helped me reset my home!"
+  },
+  {
+    id: 2,
+    name: "Daniel T.",
+    rating: 5,
+    text: "From total chaos to perfectly organized – highly recommend!"
+  },
+  {
+    id: 3,
+    name: "Jennifer K.",
+    rating: 5,
+    text: "The kitchen organization system has changed my life. Cooking is now a joy instead of a stressful experience."
+  },
+  {
+    id: 4,
+    name: "Michael R.",
+    rating: 5,
+    text: "Professional, efficient, and worth every penny. My home office is now a productive space I enjoy working in."
+  }
+];
+---
+
+<section class="section testimonials" id="testimonials">
+  <div class="container">
+    <h2 class="section-title">Clients Love NoNuMess – You Will Too!</h2>
+    
+    <div class="testimonials-slider">
+      {testimonials.map(testimonial => (
+        <div class="testimonial-card">
+          <div class="testimonial-rating">
+            {"⭐".repeat(testimonial.rating)}
+          </div>
+          <p class="testimonial-text">"{testimonial.text}"</p>
+          <p class="testimonial-author">– {testimonial.name}</p>
+        </div>
+      ))}
+    </div>
+    
+    <div class="testimonials-cta">
+      <a href="#booking" class="btn btn-primary">Join 100+ Happy Clients – Book Now</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Simple testimonial slider
+  let currentSlide = 0;
+  const testimonialCards = document.querySelectorAll('.testimonial-card');
+  const totalSlides = testimonialCards.length;
+  
+  function showSlide(index) {
+    // Hide all slides
+    testimonialCards.forEach(card => {
+      card.style.display = 'none';
+    });
+    
+    // Show current slide
+    if (testimonialCards[index]) {
+      testimonialCards[index].style.display = 'block';
+    }
+  }
+  
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+  }
+  
+  // Initialize slider
+  if (testimonialCards.length > 0) {
+    showSlide(0);
+    
+    // Auto-rotate testimonials
+    setInterval(nextSlide, 5000);
+  }
+</script>
+
+<style>
+  .testimonials {
+    background-color: var(--color-white);
+    text-align: center;
+  }
+  
+  .testimonials-slider {
+    max-width: 700px;
+    margin: var(--spacing-lg) auto;
+    position: relative;
+    height: 200px;
+  }
+  
+  .testimonial-card {
+    background-color: var(--color-light-gray);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .testimonial-rating {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.2rem;
+  }
+  
+  .testimonial-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+  }
+  
+  .testimonial-author {
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+  
+  .testimonials-cta {
+    margin-top: var(--spacing-lg);
+  }
+</style>

@@ -1,0 +1,19 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "npx astro dev",
+    "start": "npx astro dev",
+    "build": "npx astro build",
+    "preview": "npx astro preview",
+    "astro": "npx astro"
+  },
+  "dependencies": {
+    "@fontsource/montserrat": "^5.2.5",
+    "@fontsource/open-sans": "^5.2.5",
+    "@fontsource/poppins": "^5.2.5",
+    "astro": "^4.15.11"
+  }
+}
