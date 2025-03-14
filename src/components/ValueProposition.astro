@@ -1,94 +1,145 @@
 ---
-const values = [
-  {
-    icon: "✅",
-    title: "Tailored Organization Plans",
-    description: "Custom solutions for your lifestyle."
-  },
-  {
-    icon: "✅",
-    title: "Clutter-Free = Stress-Free",
-    description: "A tidy space improves mental well-being."
-  },
-  {
-    icon: "✅",
-    title: "Time-Saving Efficiency",
-    description: "Less searching, more living."
-  },
-  {
-    icon: "✅",
-    title: "Premium Service for Every Home",
-    description: "Systems designed for lasting order."
-  }
-];
 ---
 
-<section class="section value-proposition" id="value-proposition">
+<section class="value-proposition section" id="value-proposition">
   <div class="container">
-    <h2 class="section-title">Why NoNuMess? Personalized, Stress-Free, Life-Changing Organization Solutions.</h2>
+    <h2 class="section-title">Why Choose NoNuMess</h2>
+    <p class="section-subtitle">We bring order to chaos with personalized organization solutions that transform your space and simplify your life.</p>
     
-    <div class="values-grid">
-      {values.map(value => (
-        <div class="value-card">
-          <div class="value-icon">{value.icon}</div>
-          <h3 class="value-title">{value.title}</h3>
-          <p class="value-description">{value.description}</p>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+            <line x1="16" y1="8" x2="2" y2="22"></line>
+            <line x1="17.5" y1="15" x2="9" y2="15"></line>
+          </svg>
         </div>
-      ))}
+        <h3>Customized Solutions</h3>
+        <p>We create personalized organization systems tailored to your specific needs, lifestyle, and space constraints.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <h3>Time-Saving</h3>
+        <p>Our efficient organization systems help you save time by making items easy to find and reducing the stress of clutter.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h3>Professional Expertise</h3>
+        <p>Our team of certified professional organizers brings years of experience and innovative solutions to every project.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <h3>Local Service</h3>
+        <p>Proudly serving the Houston area with personalized, in-home organization services that transform your living spaces.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </div>
+        <h3>Educational Approach</h3>
+        <p>We teach you how to maintain your newly organized spaces with simple systems and practical habits.</p>
+      </div>
+      
+      <div class="value-card">
+        <div class="value-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+        <h3>Satisfaction Guaranteed</h3>
+        <p>We're committed to your complete satisfaction with our thorough, detail-oriented approach to organization.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   .value-proposition {
-    background-color: var(--color-light-gray);
+    background-color: var(--color-white);
   }
   
-  .values-grid {
+  .value-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
     margin-top: var(--spacing-lg);
   }
   
   .value-card {
     background-color: var(--color-white);
-    border-radius: var(--border-radius);
-    padding: var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: var(--transition-normal);
   }
   
   .value-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
   }
   
   .value-icon {
-    font-size: 2.5rem;
-    margin-bottom: var(--spacing-sm);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(74, 124, 89, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
   }
   
-  .value-title {
-    font-size: 1.2rem;
-    margin-bottom: var(--spacing-xs);
-    color: var(--color-accent);
+  .value-card h3 {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-lg);
+    margin-bottom: 1rem;
+    color: var(--color-primary-dark);
   }
   
-  .value-description {
+  .value-card p {
     color: var(--color-text-light);
-    font-size: 0.95rem;
+    line-height: 1.6;
   }
   
   @media (max-width: 992px) {
-    .values-grid {
+    .value-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   
   @media (max-width: 576px) {
-    .values-grid {
+    .value-grid {
       grid-template-columns: 1fr;
     }
   }

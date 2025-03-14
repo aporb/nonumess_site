@@ -1,221 +1,389 @@
 ---
 ---
 
-<section class="section booking" id="booking">
+<section class="booking-section section" id="booking">
   <div class="container">
-    <h2 class="section-title">Ready for a Stress-Free, Organized Home? Let's Get Started!</h2>
+    <h2 class="section-title">Book a Consultation</h2>
+    <p class="section-subtitle">Ready to transform your space? Schedule a free consultation to discuss your organization needs.</p>
     
     <div class="booking-container">
-      <form class="booking-form" id="booking-form">
-        <div class="form-group">
-          <label for="name" class="form-label">Name *</label>
-          <input type="text" id="name" name="name" class="form-control" required>
+      <div class="booking-info">
+        <div class="booking-card">
+          <h3>What to Expect</h3>
+          <ul class="booking-list">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Free 30-minute phone consultation</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Discuss your organization goals</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Get a customized plan for your space</span>
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Receive a quote for services</span>
+            </li>
+          </ul>
+          
+          <div class="contact-info">
+            <h4>Contact Us Directly</h4>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <a href="tel:3103820360">310-382-0360</a>
+            </p>
+            <p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <a href="mailto:info@nonumess.com">info@nonumess.com</a>
+            </p>
+          </div>
         </div>
-        
-        <div class="form-group">
-          <label for="email" class="form-label">Email *</label>
-          <input type="email" id="email" name="email" class="form-control" required>
-        </div>
-        
-        <div class="form-group">
-          <label for="phone" class="form-label">Phone Number</label>
-          <input type="tel" id="phone" name="phone" class="form-control">
-        </div>
-        
-        <div class="form-group">
-          <label for="service-interest" class="form-label">Service Interest *</label>
-          <select id="service-interest" name="service" class="form-control" required>
-            <option value="" disabled selected>Select a service</option>
-            <option value="home">Home Organization</option>
-            <option value="moving">Moving & Unpacking Assistance</option>
-            <option value="office">Office & Workspace Optimization</option>
-            <option value="estate">Estate & Downsizing Organization</option>
-            <option value="virtual">Virtual Consultation</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="preferred-date" class="form-label">Preferred Date</label>
-          <input type="date" id="preferred-date" name="date" class="form-control">
-        </div>
-        
-        <div class="form-group">
-          <label for="message" class="form-label">Additional Information</label>
-          <textarea id="message" name="message" class="form-control" rows="4"></textarea>
-        </div>
-        
-        <button type="submit" class="btn btn-primary btn-large" id="submit-button">
-          <span class="button-text">Book My Free Consultation</span>
-          <span class="button-loader" style="display: none;">
-            <span class="loader-dot"></span>
-            <span class="loader-dot"></span>
-            <span class="loader-dot"></span>
-          </span>
-        </button>
-      </form>
-      
-      <div class="booking-success" style="display: none;">
-        <h3>Thank you for booking a consultation!</h3>
-        <p>We've received your request and will contact you within 24 hours to confirm your appointment.</p>
       </div>
       
-      <div class="booking-error" style="display: none;">
-        <h3>Oops! Something went wrong.</h3>
-        <p>We couldn't process your request. Please try again or contact us directly.</p>
-        <button class="btn btn-secondary try-again-btn">Try Again</button>
+      <div class="booking-form-container">
+        <form id="booking-form" class="booking-form">
+          <div class="form-group">
+            <label for="name">Full Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone <span class="required">*</span></label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="service">Service Interested In <span class="required">*</span></label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="Kitchen Organization">Kitchen Organization</option>
+              <option value="Closet Organization">Closet Organization</option>
+              <option value="Pantry Organization">Pantry Organization</option>
+              <option value="Home Office Organization">Home Office Organization</option>
+              <option value="Garage Organization">Garage Organization</option>
+              <option value="Moving Services">Moving Services</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Tell us about your space</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="preferred-time">Preferred Contact Time</label>
+            <select id="preferred-time" name="preferred-time">
+              <option value="Morning (9am-12pm)">Morning (9am-12pm)</option>
+              <option value="Afternoon (12pm-5pm)">Afternoon (12pm-5pm)</option>
+              <option value="Evening (5pm-7pm)">Evening (5pm-7pm)</option>
+            </select>
+          </div>
+          
+          <div class="form-group form-checkbox">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">I agree to the <a href="/terms" target="_blank">Terms & Conditions</a> and <a href="/privacy" target="_blank">Privacy Policy</a> <span class="required">*</span></label>
+          </div>
+          
+          <button type="submit" class="btn btn-primary btn-lg">Schedule Consultation</button>
+          
+          <div id="form-message" class="form-message"></div>
+        </form>
       </div>
     </div>
   </div>
 </section>
 
 <script>
-  // Form submission handling
-  const bookingForm = document.getElementById('booking-form');
-  const successMessage = document.querySelector('.booking-success');
-  const errorMessage = document.querySelector('.booking-error');
-  const submitButton = document.getElementById('submit-button');
-  const buttonText = submitButton.querySelector('.button-text');
-  const buttonLoader = submitButton.querySelector('.button-loader');
-  const tryAgainBtn = document.querySelector('.try-again-btn');
-  
-  // Google Apps Script URL - REPLACE THIS WITH YOUR ACTUAL DEPLOYED SCRIPT URL
-  const SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec';
-  
-  if (bookingForm) {
-    bookingForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      // Show loading state
-      buttonText.style.display = 'none';
-      buttonLoader.style.display = 'inline-block';
-      submitButton.disabled = true;
-      
-      try {
-        // Get form data
-        const formData = new FormData(bookingForm);
-        const formValues = Object.fromEntries(formData.entries());
+  import emailjs from 'emailjs-com';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const bookingForm = document.getElementById('booking-form');
+    const formMessage = document.getElementById('form-message');
+    
+    // Initialize EmailJS with your user ID
+    emailjs.init("YOUR_USER_ID"); // Replace with your actual EmailJS user ID
+    
+    if (bookingForm) {
+      bookingForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
         
-        // Add timestamp
-        formValues.timestamp = new Date().toISOString();
+        // Show loading state
+        const submitButton = bookingForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
         
-        // Send data to Google Sheets
-        const response = await fetch(SCRIPT_URL, {
-          method: 'POST',
-          body: JSON.stringify(formValues),
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          mode: 'no-cors' // Required for Google Apps Script
-        });
-        
-        // Show success message
-        bookingForm.style.display = 'none';
-        successMessage.style.display = 'block';
-        
-        // Reset form
-        bookingForm.reset();
-        
-      } catch (error) {
-        console.error('Error submitting form:', error);
-        
-        // Show error message
-        bookingForm.style.display = 'none';
-        errorMessage.style.display = 'block';
-      } finally {
-        // Reset button state
-        buttonText.style.display = 'inline';
-        buttonLoader.style.display = 'none';
-        submitButton.disabled = false;
-      }
-    });
-  }
-  
-  // Try again button
-  if (tryAgainBtn) {
-    tryAgainBtn.addEventListener('click', () => {
-      errorMessage.style.display = 'none';
-      bookingForm.style.display = 'block';
-    });
-  }
+        try {
+          // Collect form data
+          const formData = new FormData(bookingForm);
+          const formDataObj = Object.fromEntries(formData.entries());
+          
+          // Send email using EmailJS
+          const response = await emailjs.send(
+            'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+            'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+            {
+              name: formDataObj.name,
+              email: formDataObj.email,
+              phone: formDataObj.phone,
+              service: formDataObj.service,
+              message: formDataObj.message,
+              preferred_time: formDataObj['preferred-time'],
+              reply_to: formDataObj.email, // This enables the copy to the submitter
+            }
+          );
+          
+          if (response.status === 200) {
+            // Show success message
+            formMessage.textContent = 'Thank you! Your consultation request has been received. We will contact you shortly. A copy of your submission has been sent to your email.';
+            formMessage.className = 'form-message success';
+            
+            // Reset form
+            bookingForm.reset();
+          } else {
+            throw new Error('Email sending failed');
+          }
+          
+          // Scroll to message
+          formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          
+        } catch (error) {
+          // Show error message
+          formMessage.textContent = 'There was an error submitting your request. Please try again or contact us directly.';
+          formMessage.className = 'form-message error';
+          console.error('Form submission error:', error);
+        } finally {
+          // Reset button state
+          submitButton.textContent = originalButtonText;
+          submitButton.disabled = false;
+        }
+      });
+    }
+  });
 </script>
 
 <style>
-  .booking {
+  .booking-section {
     background-color: var(--color-light-gray);
   }
   
   .booking-container {
-    max-width: 600px;
-    margin: var(--spacing-lg) auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+    margin-top: var(--spacing-lg);
+  }
+  
+  .booking-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    height: 100%;
+  }
+  
+  .booking-card h3 {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xl);
+    margin-bottom: 1.5rem;
+    color: var(--color-primary-dark);
+  }
+  
+  .booking-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .booking-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+  
+  .booking-list svg {
+    color: var(--color-primary);
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+  }
+  
+  .contact-info {
+    background-color: var(--color-primary-light);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    color: var(--color-white);
+    margin-top: 2rem;
+  }
+  
+  .contact-info h4 {
+    font-size: var(--font-size-md);
+    margin-bottom: 1rem;
+  }
+  
+  .contact-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+  
+  .contact-info svg {
+    margin-right: 0.75rem;
+  }
+  
+  .contact-info a {
+    color: var(--color-white);
+    text-decoration: underline;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: none;
+  }
+  
+  .booking-form-container {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
   }
   
   .booking-form {
-    background-color: var(--color-white);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
   }
   
-  .booking-success,
-  .booking-error {
-    background-color: var(--color-white);
-    padding: var(--spacing-lg);
+  .form-group {
+    margin-bottom: 0;
+  }
+  
+  .form-group.form-checkbox {
+    display: flex;
+    align-items: flex-start;
+    grid-column: span 2;
+    margin-top: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+  
+  .form-group.form-checkbox label {
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+    font-size: var(--font-size-sm);
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-medium-gray);
     border-radius: var(--border-radius);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.2);
+    outline: none;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+  }
+  
+  .form-group:nth-child(5),
+  .form-group:nth-child(6) {
+    grid-column: span 2;
+  }
+  
+  .booking-form .btn {
+    grid-column: span 2;
+    margin-top: 1rem;
+  }
+  
+  .required {
+    color: var(--color-error);
+  }
+  
+  .form-message {
+    grid-column: span 2;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: var(--border-radius);
     text-align: center;
   }
   
-  .booking-success h3 {
-    color: var(--color-primary);
-    margin-bottom: var(--spacing-sm);
+  .form-message.success {
+    background-color: rgba(56, 161, 105, 0.1);
+    color: var(--color-success);
+    border: 1px solid var(--color-success);
   }
   
-  .booking-error h3 {
-    color: #e74c3c;
-    margin-bottom: var(--spacing-sm);
+  .form-message.error {
+    background-color: rgba(229, 62, 62, 0.1);
+    color: var(--color-error);
+    border: 1px solid var(--color-error);
   }
   
-  .try-again-btn {
-    margin-top: var(--spacing-md);
-  }
-  
-  /* Loading animation */
-  .button-loader {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .loader-dot {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    margin: 0 2px;
-    background-color: white;
-    border-radius: 50%;
-    animation: dot-pulse 1.4s infinite ease-in-out;
-  }
-  
-  .loader-dot:nth-child(1) {
-    animation-delay: 0s;
-  }
-  
-  .loader-dot:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-  
-  .loader-dot:nth-child(3) {
-    animation-delay: 0.4s;
-  }
-  
-  @keyframes dot-pulse {
-    0%, 80%, 100% { 
-      transform: scale(0);
-      opacity: 0.5;
+  @media (max-width: 992px) {
+    .booking-container {
+      grid-template-columns: 1fr;
     }
-    40% { 
-      transform: scale(1);
-      opacity: 1;
+    
+    .booking-info {
+      order: 2;
+    }
+    
+    .booking-form-container {
+      order: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .booking-form {
+      grid-template-columns: 1fr;
+    }
+    
+    .form-group:nth-child(5),
+    .form-group:nth-child(6),
+    .form-group.form-checkbox,
+    .booking-form .btn,
+    .form-message {
+      grid-column: span 1;
     }
   }
 </style>

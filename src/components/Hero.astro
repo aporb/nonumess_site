@@ -2,15 +2,19 @@
 ---
 
 <section class="hero" id="hero">
-  <div class="hero-content">
-    <h1 class="hero-title">Transform Your Space, Elevate Your Life.</h1>
-    <h2 class="hero-subtitle">Professional home organization services for a stress-free, functional, and beautiful home.</h2>
-    <div class="hero-cta">
-      <a href="#booking" class="btn btn-primary btn-large">📅 Book a Free Consultation</a>
-      <a href="#gallery" class="btn btn-secondary btn-large">📸 See Our Work</a>
+  <div class="hero-image">
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">Transform Your Space, Simplify Your Life</h1>
+        <p class="hero-subtitle">Professional home organization services in Houston, TX</p>
+        <div class="hero-cta">
+          <a href="#booking" class="btn btn-primary btn-lg">Book a Consultation</a>
+          <a href="#services" class="btn btn-secondary btn-lg">Our Services</a>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="hero-overlay"></div>
 </section>
 
 <style>
@@ -18,44 +22,22 @@
     position: relative;
     height: 100vh;
     min-height: 600px;
+    max-height: 800px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    margin-top: 80px;
+  }
+  
+  .hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('/images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
-    color: var(--color-white);
-    text-align: center;
-    margin-top: 70px; /* Account for fixe<boltAction type="file" filePath="src/components/Hero.astro">
----
----
-
-<section class="hero" id="hero">
-  <div class="hero-content">
-    <h1 class="hero-title">Transform Your Space, Elevate Your Life.</h1>
-    <h2 class="hero-subtitle">Professional home organization services for a stress-free, functional, and beautiful home.</h2>
-    <div class="hero-cta">
-      <a href="#booking" class="btn btn-primary btn-large">📅 Book a Free Consultation</a>
-      <a href="#gallery" class="btn btn-secondary btn-large">📸 See Our Work</a>
-    </div>
-  </div>
-  <div class="hero-overlay"></div>
-</section>
-
-<style>
-  .hero {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('/images/hero-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    color: var(--color-white);
-    text-align: center;
-    margin-top: 70px; /* Account for fixed header */
+    background-repeat: no-repeat;
   }
   
   .hero-overlay {
@@ -64,48 +46,93 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
   }
   
   .hero-content {
     position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: 0 var(--spacing-md);
+    z-index: 1;
+    max-width: 700px;
+    color: var(--color-white);
+    padding: 2rem 0;
   }
   
   .hero-title {
-    font-size: 3.5rem;
-    margin-bottom: var(--spacing-sm);
-    color: var(--color-white);
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-5xl);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease-out;
   }
   
   .hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: var(--spacing-lg);
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: var(--font-size-xl);
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-out 0.2s both;
   }
   
   .hero-cta {
     display: flex;
-    gap: var(--spacing-md);
-    justify-content: center;
+    gap: 1rem;
+    animation: fadeInUp 1s ease-out 0.4s both;
   }
   
-  @media (max-width: 768px) {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 992px) {
     .hero-title {
-      font-size: 2.5rem;
+      font-size: var(--font-size-4xl);
     }
     
     .hero-subtitle {
-      font-size: 1.2rem;
+      font-size: var(--font-size-lg);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      height: 80vh;
+      margin-top: 70px;
+    }
+    
+    .hero-title {
+      font-size: var(--font-size-3xl);
+    }
+    
+    .hero-subtitle {
+      font-size: var(--font-size-md);
+      margin-bottom: 2rem;
     }
     
     .hero-cta {
       flex-direction: column;
-      gap: var(--spacing-sm);
+      width: 100%;
+    }
+    
+    .hero-cta .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero-title {
+      font-size: var(--font-size-2xl);
+    }
+    
+    .hero-subtitle {
+      font-size: var(--font-size-base);
     }
   }
 </style>

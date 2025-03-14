@@ -1,0 +1,245 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Privacy Policy - NoNuMess" description="Privacy Policy for NoNuMess home organization services.">
+  <section class="section legal-page">
+    <div class="container">
+      <div class="legal-header">
+        <h1>Privacy Policy</h1>
+        <div class="effective-date">
+          <p>Effective Date: June 1, 2023</p>
+          <p>Last Updated: June 1, 2023</p>
+        </div>
+      </div>
+      
+      <div class="legal-content">
+        <section class="legal-section">
+          <h2>1. Introduction</h2>
+          <p>NoNuMess ("Company," "we," "us," or "our") values your privacy and is committed to protecting your personal information. This Privacy Policy outlines how we collect, use, disclose, and safeguard your information when you visit our website, www.nonumess.com (the "Site"), or engage with our services.</p>
+          <p>By accessing the Site or using our services, you consent to the terms outlined in this Privacy Policy. If you do not agree, please refrain from using our website or services.</p>
+        </section>
+        
+        <section class="legal-section">
+          <h2>2. Information We Collect</h2>
+          <p>We collect both personal and non-personal information to provide and improve our services. This may include:</p>
+          
+          <h3>2.1 Personal Information</h3>
+          <p>When you use our Site, book services, or contact us, we may collect:</p>
+          <ul>
+            <li>Full name</li>
+            <li>Email address</li>
+            <li>Phone number</li>
+            <li>Mailing address (if provided)</li>
+            <li>Payment information (processed securely via third-party payment providers)</li>
+            <li>Service preferences and booking details</li>
+          </ul>
+          
+          <h3>2.2 Non-Personal Information</h3>
+          <p>We may collect non-personal data about your interaction with our Site, such as:</p>
+          <ul>
+            <li>Browser type and version</li>
+            <li>Device type</li>
+            <li>IP address</li>
+            <li>Pages visited and time spent on the Site</li>
+            <li>Referring website</li>
+          </ul>
+        </section>
+        
+        <section class="legal-section">
+          <h2>3. How We Use Your Information</h2>
+          <p>We use your information for the following purposes:</p>
+          <ul>
+            <li>To provide and manage our home organization services</li>
+            <li>To process bookings and payments</li>
+            <li>To communicate with you regarding appointments, services, or promotions</li>
+            <li>To improve our website, user experience, and marketing efforts</li>
+            <li>To comply with legal obligations and enforce our Terms & Conditions</li>
+          </ul>
+        </section>
+        
+        <section class="legal-section">
+          <h2>4. Sharing Your Information</h2>
+          <p>We do not sell, rent, or trade your personal information. However, we may share information in the following cases:</p>
+          <ul>
+            <li><strong>Service Providers:</strong> We may share your data with third-party providers that assist in processing payments, scheduling appointments, or marketing.</li>
+            <li><strong>Legal Compliance:</strong> If required by law, we may disclose information to government authorities or law enforcement.</li>
+            <li><strong>Business Transfers:</strong> If NoNuMess undergoes a merger, acquisition, or sale, your information may be transferred to new owners.</li>
+          </ul>
+        </section>
+        
+        <section class="legal-section">
+          <h2>5. Data Security</h2>
+          <p>We implement reasonable security measures to protect your personal information from unauthorized access, alteration, or disclosure. However, no method of online transmission or storage is 100% secure.</p>
+        </section>
+        
+        <section class="legal-section">
+          <h2>6. Your Rights & Choices</h2>
+          <ul>
+            <li><strong>Opt-Out:</strong> You may unsubscribe from marketing emails by following the opt-out link.</li>
+            <li><strong>Access & Correction:</strong> You may request a copy of your personal data and request corrections if inaccurate.</li>
+            <li><strong>Deletion Requests:</strong> You may request the deletion of your personal information unless legally required to retain it.</li>
+          </ul>
+          <p>To exercise these rights, please contact us at info@nonumess.com.</p>
+        </section>
+        
+        <section class="legal-section">
+          <h2>7. Third-Party Links</h2>
+          <p>Our Site may contain links to third-party websites. We are not responsible for the privacy practices of these external sites. Please review their policies before providing personal information.</p>
+        </section>
+        
+        <section class="legal-section">
+          <h2>8. Changes to This Policy</h2>
+          <p>We reserve the right to update this Privacy Policy at any time. Changes will be reflected on this page, and we encourage you to review it periodically.</p>
+        </section>
+        
+        <section class="legal-section">
+          <h2>9. Contact Us</h2>
+          <p>If you have questions regarding this Privacy Policy, you can contact us at:</p>
+          <div class="contact-info">
+            <p><strong>NoNuMess</strong></p>
+            <p>📍 Houston, TX</p>
+            <p>📞 Phone: 310-382-0360</p>
+            <p>📧 Email: info@nonumess.com</p>
+            <p>📷 Instagram: @nonumess</p>
+          </div>
+        </section>
+      </div>
+      
+      <div class="back-link">
+        <a href="/" class="btn btn-secondary">Back to Home</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Handle navigation links for when users come from other pages
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('a[href^="/#"]');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href.startsWith('/#')) {
+          e.preventDefault();
+          window.location.href = href;
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .legal-page {
+    padding-top: 120px;
+    padding-bottom: var(--spacing-xl);
+    background-color: var(--color-light-gray);
+  }
+  
+  .legal-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+  
+  h1 {
+    font-family: var(--font-secondary);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+  }
+  
+  h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 3px;
+  }
+  
+  .effective-date {
+    color: var(--color-text-light);
+  }
+  
+  .effective-date p {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .legal-content {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .legal-section {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  h2 {
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-medium-gray);
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+    margin: var(--spacing-md) 0 var(--spacing-sm);
+    color: var(--color-primary-dark);
+  }
+  
+  ul {
+    margin-left: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  li {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .contact-info {
+    background-color: var(--color-light-gray);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-sm);
+    border-left: 4px solid var(--color-primary);
+  }
+  
+  .contact-info p {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .back-link {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+  }
+  
+  @media (max-width: 768px) {
+    .legal-content {
+      padding: var(--spacing-md);
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+    
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+</style>

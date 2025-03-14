@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page Not Found - NoNuMess">
+  <div class="error-container">
+    <div class="error-content">
+      <h1>404</h1>
+      <h2>Page Not Found</h2>
+      <p>The page you are looking for doesn't exist or has been moved.</p>
+      <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+  }
+  
+  .error-content {
+    text-align: center;
+    max-width: 600px;
+    padding: 3rem;
+    border-radius: var(--border-radius-lg);
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  h1 {
+    font-size: 8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+  }
+  
+  p {
+    font-size: var(--font-size-lg);
+    margin-bottom: 2rem;
+    color: var(--color-text-light);
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+  }
+  
+  @media (max-width: 576px) {
+    .error-content {
+      padding: 2rem;
+    }
+    
+    h1 {
+      font-size: 6rem;
+    }
+    
+    h2 {
+      font-size: var(--font-size-xl);
+    }
+    
+    p {
+      font-size: var(--font-size-base);
+    }
+  }
+</style>

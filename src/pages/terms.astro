@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Terms & Conditions - NoNuMess" description="Terms and Conditions for NoNuMess home organization services.">
+  <section class="section legal-page">
+    <div class="container">
+      <div class="legal-header">
+        <h1>Terms & Conditions</h1>
+        <div class="effective-date">
+          <p>Effective Date: June 1, 2023</p>
+          <p>Last Updated: June 1, 2023</p>
+        </div>
+      </div>
+      
+      <div class="legal-content">
+        <section class="legal-section">
+          <h2>1. Introduction</h2>
+          <p>These Terms & Conditions ("Terms") govern your use of the NoNuMess website (www.nonumess.com) and services. By accessing the Site or using our services, you agree to these Terms. If you do not agree, please refrain from using the Site or booking services.</p>
+        </section>
+        
+        <section class="legal-section">
+          <h2>2. Services Provided</h2>
+          <p>NoNuMess provides professional organizing, decluttering, and consulting services. Services are available both in-person and virtually, as detailed on our Site.</p>
+        </section>
+        
+        <section class="legal-section">
+          <h2>3. Booking & Payment Policy</h2>
+          <ul>
+            <li>All services must be scheduled in advance through our online booking system or by contacting us directly.</li>
+            <li>Payment is due at the time of booking unless otherwise agreed. We accept credit/debit cards and other approved payment methods.</li>
+            <li>Refunds for canceled services will be processed in accordance with our Cancellation Policy (see Section 4).</li>
+          </ul>
+        </section>
+        
+        <section class="legal-section">
+          <h2>4. Cancellation & Rescheduling Policy</h2>
+          <ul>
+            <li>Clients must provide at least 48 hours' notice to cancel or reschedule a session.</li>
+            <li>Cancellations made within 48 hours of the scheduled appointment may result in a 50% charge of the service fee.</li>
+            <li>No-shows will be charged 100% of the booked service fee.</li>
+            <li>NoNuMess reserves the right to cancel appointments due to unforeseen circumstances. In such cases, we will offer a full refund or reschedule at no additional cost.</li>
+          </ul>
+        </section>
+        
+        <section class="legal-section">
+          <h2>5. Client Responsibilities</h2>
+          <ul>
+            <li>Clients must ensure their space is accessible and safe for our team to work in.</li>
+            <li>Clients are responsible for making decisions regarding item removal and disposal.</li>
+            <li>NoNuMess is not liable for lost, misplaced, or discarded items unless due to negligence.</li>
+          </ul>
+        </section>
+        
+        <section class="legal-section">
+          <h2>6. Limitation of Liability</h2>
+          <p>To the fullest extent permitted by law, NoNuMess and its employees shall not be liable for any:</p>
+          <ul>
+            <li>Direct, indirect, incidental, or consequential damages arising from the use of our services.</li>
+            <li>Loss of items, emotional distress, or dissatisfaction with service outcomes.</li>
+            <li>Damage to property unless caused by negligence or willful misconduct.</li>
+          </ul>
+        </section>
+        
+        <section class="legal-section">
+          <h2>7. Intellectual Property</h2>
+          <ul>
+            <li>All content on this Site, including text, images, graphics, and logos, is the intellectual property of NoNuMess.</li>
+            <li>You may not copy, distribute, or reproduce any content without prior written consent.</li>
+          </ul>
+        </section>
+        
+        <section class="legal-section">
+          <h2>8. Privacy & Data Use</h2>
+          <p>By using our Site, you consent to the collection and use of personal information as outlined in our <a href="/privacy">Privacy Policy</a>.</p>
+        </section>
+        
+        <section class="legal-section">
+          <h2>9. Service Modifications & Termination</h2>
+          <ul>
+            <li>NoNuMess reserves the right to modify, suspend, or discontinue any service at any time.</li>
+            <li>We reserve the right to refuse service to any client for reasons including but not limited to non-compliance with these Terms.</li>
+          </ul>
+        </section>
+        
+        <section class="legal-section">
+          <h2>10. Dispute Resolution</h2>
+          <ul>
+            <li>Any disputes arising from our services will first be attempted to be resolved amicably.</li>
+            <li>If no resolution is reached, disputes will be subject to mediation in Houston, TX, in accordance with applicable laws.</li>
+          </ul>
+        </section>
+        
+        <section class="legal-section">
+          <h2>11. Governing Law</h2>
+          <p>These Terms shall be governed by and construed in accordance with the laws of the State of Texas.</p>
+        </section>
+        
+        <section class="legal-section">
+          <h2>12. Changes to These Terms</h2>
+          <p>We may update these Terms periodically. Continued use of our Site and services constitutes acceptance of any modifications.</p>
+        </section>
+        
+        <section class="legal-section">
+          <h2>13. Contact Information</h2>
+          <p>If you have any questions regarding these Terms & Conditions, please contact us at:</p>
+          <div class="contact-info">
+            <p><strong>NoNuMess</strong></p>
+            <p>📍 Houston, TX</p>
+            <p>📞 Phone: 310-382-0360</p>
+            <p>📧 Email: info@nonumess.com</p>
+            <p>📷 Instagram: @nonumess</p>
+          </div>
+        </section>
+      </div>
+      
+      <div class="back-link">
+        <a href="/" class="btn btn-secondary">Back to Home</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Handle navigation links for when users come from other pages
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('a[href^="/#"]');
+    
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href.startsWith('/#')) {
+          e.preventDefault();
+          window.location.href = href;
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .legal-page {
+    padding-top: 120px;
+    padding-bottom: var(--spacing-xl);
+    background-color: var(--color-light-gray);
+  }
+  
+  .legal-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+  
+  h1 {
+    font-family: var(--font-secondary);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+  }
+  
+  h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--color-primary);
+    border-radius: 3px;
+  }
+  
+  .effective-date {
+    color: var(--color-text-light);
+  }
+  
+  .effective-date p {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .legal-content {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .legal-section {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  h2 {
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-medium-gray);
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+    margin: var(--spacing-md) 0 var(--spacing-sm);
+    color: var(--color-primary-dark);
+  }
+  
+  ul {
+    margin-left: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  li {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .contact-info {
+    background-color: var(--color-light-gray);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-sm);
+    border-left: 4px solid var(--color-primary);
+  }
+  
+  .contact-info p {
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .back-link {
+    text-align: center;
+    margin-top: var(--spacing-xl);
+  }
+  
+  @media (max-width: 768px) {
+    .legal-content {
+      padding: var(--spacing-md);
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+    
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+</style>
