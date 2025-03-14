@@ -1,54 +1,217 @@
-# Astro Starter Kit: Basics
+# NoNuMess Home Organization Services
 
-```sh
-npm create astro@latest -- --template basics
+![Astro](https://img.shields.io/badge/Astro-5.4.3-orange.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0.0-blue.svg)
+![EmailJS](https://img.shields.io/badge/EmailJS-3.2.0-green.svg)
+
+A professional landing page for NoNuMess, a home organization service based in Los Angeles, CA. This site showcases services, before/after transformations, client testimonials, and includes a contact form powered by EmailJS.
+
+## 📋 Project Overview
+
+This project is a responsive, modern landing page for NoNuMess Home Organization Services. It's built with Astro, a modern static site builder that delivers excellent performance with minimal JavaScript. The site features:
+
+- Responsive design that works on all devices
+- Dark/light theme toggle
+- Image gallery with before/after transformations
+- Client testimonials
+- Service descriptions
+- FAQ section
+- Contact form with EmailJS integration (no backend required)
+- Privacy Policy and Terms & Conditions pages
+
+## 🚀 Installation
+
+### Prerequisites
+
+- Node.js (v16.x or higher)
+- npm (v7.x or higher)
+
+### Step-by-Step Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/nonumess-website.git
+   cd nonumess-website
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:4321`
+
+## ⚙️ Configuration
+
+### EmailJS Setup
+
+The contact form uses EmailJS for sending emails without a backend. To configure it:
+
+1. Create an account at [EmailJS.com](https://www.emailjs.com/)
+2. Set up an email service and template as described in `src/components/EmailJSSetupInstructions.md`
+3. Update the following values in `src/components/Booking.astro`:
+   ```javascript
+   // Replace these with your actual EmailJS credentials
+   const USER_ID = "YOUR_USER_ID";
+   const SERVICE_ID = "YOUR_SERVICE_ID";
+   const TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+   ```
+
+### Site Configuration
+
+Basic site configuration is stored in `config.json`. You can modify:
+
+- Company information
+- Contact details
+- Social media links
+- Service offerings
+- FAQ items
+
+```json
+{
+  "companyName": "NoNuMess",
+  "phone": "310-382-0360",
+  "email": "info@nonumess.com",
+  "instagram": "@nonumess",
+  "services": [
+    {
+      "title": "Home Organization",
+      "description": "..."
+    },
+    // More services...
+  ]
+}
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🖥️ Usage
 
-> ð§âð **Seasoned astronaut?** Delete this file. Have fun!
+### Development
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+```bash
+# Start development server
+npm run dev
 
-## ð Project Structure
+# Build for production
+npm run build
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-âââ public/
-â   âââ favicon.svg
-âââ src/
-â   âââ components/
-â   â   âââ Card.astro
-â   âââ layouts/
-â   â   âââ Layout.astro
-â   âââ pages/
-â       âââ index.astro
-âââ package.json
+# Preview production build
+npm run preview
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Customizing Content
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+#### Modifying Services
 
-Any static assets, like images, can be placed in the `public/` directory.
+Edit the services in `src/components/Services.astro`:
 
-## ð§ Commands
+```astro
+<div class="service">
+  <h3>Home Organization</h3>
+  <p>Transform cluttered spaces into functional, beautiful areas that enhance your daily life.</p>
+</div>
+```
 
-All commands are run from the root of the project, from a terminal:
+#### Updating Gallery Images
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Replace images in the `public/images` directory and update references in `src/components/Gallery.astro`:
 
-## ð Want to learn more?
+```astro
+<div class="before-after">
+  <img src="/images/before-after-1.jpg" alt="Before and after transformation of a kitchen pantry" />
+  <div class="caption">Kitchen Pantry Transformation</div>
+</div>
+```
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+#### Adding Testimonials
+
+Modify testimonials in `src/components/Testimonials.astro`:
+
+```astro
+<div class="testimonial">
+  <div class="quote">"Working with NoNuMess completely transformed my home office. I can finally find everything!"</div>
+  <div class="author">- Sarah T., Los Angeles</div>
+</div>
+```
+
+## 📦 Deployment
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+This generates static files in the `dist/` directory that can be deployed to any static hosting service.
+
+### Deploying to Dreamhost
+
+See the detailed instructions in `dreamhost-deployment-guide.md` for deploying to Dreamhost shared hosting.
+
+Key points:
+- Build the site locally
+- Upload the contents of the `dist` directory to your hosting
+- No server-side dependencies needed (EmailJS works client-side)
+
+## 🔍 Troubleshooting
+
+### Common Issues
+
+#### Form Not Sending Emails
+- Check browser console for JavaScript errors
+- Verify EmailJS credentials are correctly set
+- Ensure your EmailJS account is active and within usage limits
+
+#### Images Not Loading
+- Verify file paths are correct
+- Check that images exist in the `public/images` directory
+- Ensure file names match exactly (case-sensitive)
+
+#### Dark Mode Toggle Not Working
+- Check for JavaScript console errors
+- Verify the theme toggle script is loading properly
+- Clear browser cache and cookies
+
+### TypeScript Errors
+
+If you encounter TypeScript errors during development:
+
+```bash
+# Check for TypeScript issues
+npx tsc --noEmit
+```
+
+## 🤝 Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+Please ensure your code follows the existing style and includes appropriate tests.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Credits and Acknowledgments
+
+- Built with [Astro](https://astro.build)
+- Email functionality by [EmailJS](https://www.emailjs.com/)
+- Fonts from [Google Fonts](https://fonts.google.com/) via Fontsource
+- Icons from [Font Awesome](https://fontawesome.com/)
+- Special thanks to NoNuMess for the opportunity to create this website
+
+## 📞 Contact Information
+
+For questions about the website or services:
+- Phone: 310-382-0360
+- Email: info@nonumess.com
+- Instagram: [@nonumess](https://instagram.com/nonumess)
